@@ -1,14 +1,26 @@
 
+import { useState } from 'react';
 import './App.css'
 
 function App() {
+
+  const [count,setCount]=useState(0)
  
+
+  function decrement() {
+    setCount(prevCount=>prevCount-1)
+    
+  }
+  
+  function increment() {
+    setCount((prevCount) => prevCount +1);
+  }
 
   return (
     <>
-      <button>-</button>
-      <span>0</span>
-      <button>+</button>
+      <button onClick={decrement}>-</button>
+      <span>{count}</span>
+      <button onClick={increment}>+</button>
     </>
   );
 }
